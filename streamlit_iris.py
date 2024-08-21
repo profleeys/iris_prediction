@@ -13,7 +13,8 @@ rl = col3.number_input("請輸入花萼長:")
 rw = col3.number_input("請輸入花萼寬:")
 
 df_pred = pd.DataFrame([[bl,bw,rl,rw]])
-    
+
+model = DecisionTreeClassifier(random_state=0)
 model = joblib.load('dt_model.pkl')
 
 prediction = model.predict(df_pred)
