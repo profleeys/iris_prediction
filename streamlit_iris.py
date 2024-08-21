@@ -1,5 +1,6 @@
 import joblib
 import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
 import streamlit as st
 
 st.write("# IRIS Prediction")
