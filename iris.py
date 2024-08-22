@@ -11,8 +11,6 @@ y = iris.target
 dt = DecisionTreeClassifier(random_state=0)
 dt.fit(X, y)
 
-joblib.dump(dt, 'dt_model.pkl') 
-
 st.write("# IRIS Prediction")
 
 col1, col2, col3, col4 = st.columns(4)
