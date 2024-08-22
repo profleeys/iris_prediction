@@ -1,14 +1,17 @@
 import streamlit as st
 import pandas as pd
 import joblib
+from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier
-import os
 
-# 获取当前工作路径
-current_working_directory = os.getcwd()
+iris = datasets.load_iris()
+X = iris.data
+y = iris.target
 
-# 输出当前工作路径
-st.write(f"当前工作路径: {current_working_directory}")
+dt = DecisionTreeClassifier(random_state=0)
+dt.fit(X, y)
+
+joblib.dump(dt, 'dt_model.pkl') 
 
 st.write("# IRIS Prediction")
 
