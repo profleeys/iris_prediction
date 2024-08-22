@@ -19,6 +19,10 @@ model = joblib.load('dt_model.pkl')
 
 prediction = model.predict(df_pred)
 prediction_prob = model.predict_proba(df_pred)
+'''
+
+prediction = [0]
+prediction_prob = [1.0, 0, 0]
 
 if st.button('Predict'):
     if(prediction[0]==0):
