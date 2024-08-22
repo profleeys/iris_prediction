@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import pickle
+import joblib
 
 st.write("# IRIS Prediction")
 
@@ -13,8 +13,9 @@ rw = col3.number_input("請輸入花萼寬:")
 
 df_pred = pd.DataFrame([[bl,bw,rl,rw]])
 
+# 加载模型并测试
 with open('./dt_model.pkl', 'rb') as f:
-    model = pickle.load(f)
+    model = joblib.load(f)
 
 prediction = model.predict(df_pred)
 prediction_prob = model.predict_proba(df_pred)
