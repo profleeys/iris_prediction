@@ -13,7 +13,8 @@ rw = col3.number_input("請輸入花萼寬:")
 
 df_pred = pd.DataFrame([[bl,bw,rl,rw]])
 
-model = pickle.load('dt_model.pkl')
+with open('./dt_model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 prediction = model.predict(df_pred)
 prediction_prob = model.predict_proba(df_pred)
