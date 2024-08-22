@@ -16,13 +16,8 @@ df_pred = pd.DataFrame([[bl,bw,rl,rw]])
 with open('dt_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
-'''
 prediction = model.predict(df_pred)
 prediction_prob = model.predict_proba(df_pred)
-'''
-
-prediction = [0]
-prediction_prob = [1.0, 0, 0]
 
 if st.button('Predict'):
     if(prediction[0]==0):
