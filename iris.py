@@ -32,7 +32,7 @@ rw = col3.number_input("請輸入花萼寬:")
 df_pred = pd.DataFrame([[bl,bw,rl,rw]])
 
 # 加载模型并测试
-with open('models/dt_model.pkl', 'rb') as f:
+with open('/mount/src/iris_prediction/dt_model.pkl', 'rb') as f:
     model = joblib.load(f)
 
 prediction = model.predict(df_pred)
