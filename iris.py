@@ -1,7 +1,17 @@
 import streamlit as st
 import pandas as pd
-import sklearn
 import joblib
+from sklearn import datasets
+from sklearn.tree import DecisionTreeClassifier
+
+iris = datasets.load_iris()
+X = iris.data
+y = iris.target
+
+dt = DecisionTreeClassifier(random_state=0)
+dt.fit(X, y)
+
+joblib.dump(dt, 'dt_model.pkl') 
 
 st.write("# IRIS Prediction")
 
