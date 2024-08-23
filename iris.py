@@ -6,6 +6,12 @@ from sklearn.tree import DecisionTreeClassifier
 
 import os
 
+# 获取当前工作目录
+current_directory = os.getcwd()
+
+# 显示当前工作目录
+st.write(f"当前工作目录: {current_directory}")
+
 # 获取当前工作目录下的所有文件和文件夹
 files_and_directories = os.listdir('.')
 
