@@ -3,7 +3,6 @@ import pandas as pd
 import joblib
 from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier
-import sklearn
 
 import os
 
@@ -40,6 +39,8 @@ rl = col3.number_input("請輸入花萼長:")
 rw = col3.number_input("請輸入花萼寬:")
 
 df_pred = pd.DataFrame([[bl,bw,rl,rw]])
+
+model = DecisionTreeClassifier(random_state=0)
 
 # 加载模型并测试
 with open('/mount/src/iris_prediction/dt_model.pkl', 'rb') as f:
