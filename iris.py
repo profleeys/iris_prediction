@@ -4,6 +4,16 @@ import joblib
 from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier
 
+import os
+
+# 获取当前工作目录下的所有文件和文件夹
+files_and_directories = os.listdir('.')
+
+# 显示当前工作目录下的所有文件和文件夹
+st.write("当前目录下的文件和文件夹:")
+for item in files_and_directories:
+    st.write(item)
+
 iris = datasets.load_iris()
 X = iris.data
 y = iris.target
@@ -25,6 +35,7 @@ rw = col3.number_input("請輸入花萼寬:")
 df_pred = pd.DataFrame([[bl,bw,rl,rw]])
 
 # 加载模型并测试
+#with open('/mount/src/iris_prediction/dt_model.pkl', 'rb') as f:
 with open('/mount/src/iris_prediction/dt_model.pkl', 'rb') as f:
     model = joblib.load(f)
 
