@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import joblib
-from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier
 
 import os
@@ -19,15 +18,6 @@ import os
 #st.write("当前目录下的文件和文件夹:")
 #for item in files_and_directories:
 #    st.write(item)
-
-#iris = datasets.load_iris()
-#X = iris.data
-#y = iris.target
-
-#dt = DecisionTreeClassifier(random_state=0)
-#dt.fit(X, y)
-
-#joblib.dump(dt, 'dt_model.pkl') 
 
 st.write("# IRIS Prediction")
 
