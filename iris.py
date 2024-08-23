@@ -3,6 +3,7 @@ import pandas as pd
 import joblib
 from sklearn import datasets
 from sklearn.tree import DecisionTreeClassifier
+import sklearn
 
 import os
 
@@ -42,7 +43,6 @@ df_pred = pd.DataFrame([[bl,bw,rl,rw]])
 
 # 加载模型并测试
 with open('/mount/src/iris_prediction/dt_model.pkl', 'rb') as f:
-#with open('/mount/src/profleeys/iris_prediction-main/dt_model.pkl', 'rb') as f:
     model = joblib.load(f)
 
 prediction = model.predict(df_pred)
