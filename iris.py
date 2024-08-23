@@ -20,14 +20,14 @@ st.write(f"当前工作目录: {current_directory}")
 #for item in files_and_directories:
 #    st.write(item)
 
-iris = datasets.load_iris()
-X = iris.data
-y = iris.target
+#iris = datasets.load_iris()
+#X = iris.data
+#y = iris.target
 
-dt = DecisionTreeClassifier(random_state=0)
-dt.fit(X, y)
+#dt = DecisionTreeClassifier(random_state=0)
+#dt.fit(X, y)
 
-joblib.dump(dt, 'dt_model.pkl') 
+#joblib.dump(dt, 'dt_model.pkl') 
 
 st.write("# IRIS Prediction")
 
@@ -42,7 +42,7 @@ df_pred = pd.DataFrame([[bl,bw,rl,rw]])
 
 # 加载模型并测试
 #with open('/mount/src/iris_prediction/dt_model.pkl', 'rb') as f:
-with open('/mount/src/iris_prediction/dt_model.pkl', 'rb') as f:
+with open('profleeys/iris_prediction/dt_model.pkl', 'rb') as f:
     model = joblib.load(f)
 
 prediction = model.predict(df_pred)
