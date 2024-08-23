@@ -7,10 +7,10 @@ from sklearn.tree import DecisionTreeClassifier
 import os
 
 # 获取当前工作目录
-current_directory = os.getcwd()
+#current_directory = os.getcwd()
 
 # 显示当前工作目录
-st.write(f"当前工作目录: {current_directory}")
+#st.write(f"当前工作目录: {current_directory}")
 
 # 获取当前工作目录下的所有文件和文件夹
 #files_and_directories = os.listdir('.')
@@ -40,10 +40,9 @@ rw = col3.number_input("請輸入花萼寬:")
 
 df_pred = pd.DataFrame([[bl,bw,rl,rw]])
 
-model = DecisionTreeClassifier(random_state=0)
-
 # 加载模型并测试
 with open('/mount/src/iris_prediction/dt_model.pkl', 'rb') as f:
+    st.write(f)
     model = joblib.load(f)
 
 prediction = model.predict(df_pred)
